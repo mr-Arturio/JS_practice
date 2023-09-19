@@ -40,7 +40,8 @@ function twoSum(nums, target) {
 }
 ```
 ### Solution 2: Using a plain object
-Here's the same solution using a plain object to store elements and their indices:  a time complexity of ```O(n)```<br>
+**more efficient and clear for me **
+Here's the solution using a plain object to store elements and their indices:  a time complexity of ```O(n)```<br>
 
 ```JavaScript
 function twoSum(nums, target) {
