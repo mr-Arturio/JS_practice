@@ -62,6 +62,22 @@ function twoSum(nums, target) {
 
 ```
 
+- ```const numIndices = {};```: This line initializes an empty object called ```numIndices```. This object will be used to store elements from the nums array as keys and their corresponding indices as values.
+
+- The function enters a ```for``` loop that iterates through the ```nums``` array using the variable ```i```.
+
+- ```const complement = target - nums[i];```: Inside the loop, it calculates the ```complement```, which is the difference between the ```target``` value and the current element ```nums[i]```. The complement represents the number that, when added to the current element, will result in the target sum.
+
+- ```if (numIndices[complement] !== undefined) { ... }```: This conditional statement checks if the ```complement``` (the number we're looking for) exists as a property/key in the ```numIndices``` object. If it does, that means we've found a pair of elements in the ```nums``` array whose sum equals the ```target```.
+
+- ```return [numIndices[complement], i];```: If the complement is found in the ```numIndices``` object, this line returns an array containing the indices of the two elements that add up to the ```target```. ```numIndices[complement]``` retrieves the index of the complement from the object, and ```i``` is the index of the current element in the nums array.
+
+- ```numIndices[nums[i]] = i;```: If the complement is not found in the object, the code proceeds to this line. It adds the current element ```nums[i]``` as a property/key to the ```numIndices``` object and assigns its index ```i``` as the corresponding value. This step ensures that if we encounter the complement in future iterations, we can quickly find its index.
+
+- The loop continues to iterate through the ```nums``` array, checking each element and its complement until a solution is found or until the loop finishes.
+
+- If no solution is found within the loop (i.e., no pair of elements adds up to the ```target```), the function returns an empty array ```[]``` as specified in the problem statement.
+
 ### Solution 3: Using a HashMap
 same as Object but using Map<br>
 This solution using a HashMap is the most efficient with a time complexity of ```O(n)```<br>
